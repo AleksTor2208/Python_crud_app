@@ -44,9 +44,12 @@ def validation(name, description, price):
         price = int(price)
         if price < 0:
             flash('Invalid price')
-            return False
-    
+            return False    
     return True
+
+@app.route("/remove/<product_id>", methods=["GET", "POST"])
+def remove_product(product_id):
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
