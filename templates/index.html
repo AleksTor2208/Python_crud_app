@@ -2,9 +2,9 @@
 
 <body>
     <center>
-    <form action="product/new">
-        <button class="add_product_button">Add product</button>
-    </form>
+        <form action="product/new">
+            <button class="add_product_button">Add product</button>
+        </form>
     </center>
     {% if products %}
     <table class="index_table">
@@ -21,9 +21,10 @@
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
-            <td class="trash"><a href="remove/{{ product.id }}"> 
-            <img class="image" src="{{ url_for('static', filename='pictures/trash.png') }}">
-            </a>
+            <td class="trash">
+                <a href="remove/{{ product.id }}">
+                    <img class="image" src="{{ url_for('static', filename='pictures/trash.png') }}">
+                </a>
             </td>
         </tr>
         {% endfor %}
@@ -32,4 +33,5 @@
     <h2>There are no products in list, press 'Add' to create new event</h2>
     {% endif %}
 </body>
+
 </html>

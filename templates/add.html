@@ -1,4 +1,4 @@
-{% include "header.html" %} 
+{% include "header.html" %}
 
 <h2>Add new Product</h2>
 {% with messages = get_flashed_messages() %} {% if messages %}
@@ -8,6 +8,7 @@
     {% endfor %}
 </ul>
 {% endif %} {% endwith %}
+
 <body>
     <form method="POST">
         <table>
@@ -23,7 +24,7 @@
                 <td><label for="describtion" class="describtion_label">Describtion</label></td>
                 <td><input class="descr_input" type="text" name="describtion" /></td>
             </tr>
-            
+
             <tr>
                 <td></td>
                 <td><input type="submit" value="Add" /></td>
