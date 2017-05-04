@@ -29,8 +29,6 @@ class Product:
     def get_by_id(product_id):
         products = Product.get_all()
         for product in products:
-            print(type(product.id))
-            print(type(product_id))
             if product.id == int(product_id):
                 return product
         return False

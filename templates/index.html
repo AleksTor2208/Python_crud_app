@@ -1,9 +1,11 @@
 {% include "header.html" %}
 
 <body>
+    <center>
     <form action="product/new">
         <button class="add_product_button">Add product</button>
     </form>
+    </center>
     {% if products %}
     <table>
         <tr>
@@ -18,7 +20,7 @@
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
-            <td><a href="remove/{{ product.id }}">
+            <td><a href="remove/{{ product.id }}"> Delete
             <img class="image" src="{{ url_for('static', filename='pictures/trash.png') }}">
             </a>
             </td>
