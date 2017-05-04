@@ -7,11 +7,15 @@ app = Flask(__name__)
 app.secret_key = "secret_key"
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/products", methods=["GET", "POST"])
 def index():
     """ show list of products on the page """
     products = Product.get_all()   
     return render_template("index.html", products=products)
+
+@app.route("/", methods=["GET", "POST"])
+def redir_index():
+    return redirect(url_for("index"))
 
 @app.route("/product/new", methods=["GET", "POST"])
 def add_product():
@@ -43,12 +47,12 @@ def validation(name, description, price):
         flash('Price is empty')
         return False
     if not price.isdigit():
-        flash('Invalid price')
+        flash('Price should contain integers')
         return False
     if price.isdigit():
         price = int(price)
         if price < 0:
-            flash('Invalid price')
+            flash('Price can not be less then 0')
             return False    
     return True
 

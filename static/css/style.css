@@ -1,4 +1,9 @@
 
+.title {
+    text-align: left;
+}
+
+
 .image {
     width: 22px;
     height: 22px;
@@ -15,11 +20,11 @@ table {
 }
 
 .index_table th {
-    background: lawngreen;
+    background: silver;
 }
 
-tr:nth-child(even) {background: #CCC}
-tr:nth-child(odd) {background: #FFF}
+.index_table tr:nth-child(even) {background: #CCC}
+
 
 th {
     height: 40px;
