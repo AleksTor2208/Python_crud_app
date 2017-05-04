@@ -1,6 +1,10 @@
 {% include "header.html" %}
 
 <body>
+    <form action="product/new">
+        <button class="add_product_button">Add product</button>
+    </form>
+
     {% if products %}
     <table>
         <tr>

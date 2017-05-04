@@ -12,5 +12,9 @@ def index():
     products = Product.get_all()   
     return render_template("index.html", products=products)
 
+@app.route("/product/new", methods=["GET", "POST"])
+def add_product():
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(debug=True)
