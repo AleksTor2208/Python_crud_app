@@ -4,7 +4,6 @@
     <form action="product/new">
         <button class="add_product_button">Add product</button>
     </form>
-
     {% if products %}
     <table>
         <tr>
@@ -21,8 +20,8 @@
             <td>{{product.price}}</td>
         </tr>
         {% endfor %}
-        </table>
+    </table>
     {% else %}
     <h2>There are no products in list, press 'Add' to create new event</h2>
     {% endif %}
-    </body>
+</body>

@@ -14,7 +14,11 @@ def index():
 
 @app.route("/product/new", methods=["GET", "POST"])
 def add_product():
-    return redirect(url_for("index"))
+    if request.method == "GET":
+        return render_template("add.html")
+    if request.method == "POST":
+        return redirect(url_for("inex"))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
