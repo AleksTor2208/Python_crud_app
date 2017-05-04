@@ -24,3 +24,18 @@ class Product:
         query = "INSERT INTO products (name, description, price) VALUES(?, ?, ?);"
         params = [self.name, self.description, self.price]
         SQL.execute_query(query, params)
+
+    @staticmethod
+    def get_by_id(product_id):
+        products = Product.get_all()
+        for product in products:
+            print(type(product.id))
+            print(type(product_id))
+            if product.id == int(product_id):
+                return product
+        return False
+
+    def remove_product(self):
+        query = "DELETE FROM products WHERE ID=?"
+        params = [self.id]
+        SQL.execute_query(query, params)

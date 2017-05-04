@@ -49,7 +49,13 @@ def validation(name, description, price):
 
 @app.route("/remove/<product_id>", methods=["GET", "POST"])
 def remove_product(product_id):
+    my_product = Product.get_by_id(product_id)
+    print(my_product)
+    if my_product:
+        print("my_product is not False")
+        my_product.remove_product()
     return redirect(url_for("index"))
+    
 
 
 if __name__ == "__main__":
