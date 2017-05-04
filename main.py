@@ -20,9 +20,29 @@ def add_product():
         name = request.form["name"]
         description = request.form["describtion"]
         price = request.form["price"]
-        product = Product("", name, description, price)
-        product.add_product()
-        return redirect(url_for("index"))
+        is_valid = validation(name, description, price)
+        if is_valid:
+            product = Product("", name, description, price)
+            product.add_product()
+            return redirect(url_for("index"))
+        return render_template("add.html")
+
+def validation(name, description, price):
+    if name == "":
+        flash('Name is empty')
+        return False
+    if description == "":
+        flash('Description is empty')
+        return False
+    price = int(price)
+    if price == "":
+        flash('Price is empty')
+        return False
+    price = int(price)
+    if price < 0:
+        flash('Price is less then 0')
+        return False
+    return True
 
 
 if __name__ == "__main__":
