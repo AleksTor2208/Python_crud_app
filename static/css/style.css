@@ -10,9 +10,16 @@ table {
     width: 50%;
 }
 
-.index_table, th, td {
+.index_table, .index_table th, .index_table td {
     border: 1px solid black;
 }
+
+.index_table th {
+    background: lawngreen;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
 
 th {
     height: 40px;
@@ -50,7 +57,7 @@ td {
     margin: 2em;
     background-color: blue;
     position: relative;
-    right: -9em;
+    right: -15em;
 }
 
 h2 {
