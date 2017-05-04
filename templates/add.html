@@ -1,5 +1,11 @@
-{% include "header.html" %}
-
+{% include "header.html" %} 
+{% with messages = get_flashed_messages() %} {% if messages %}
+<ul>
+    {% for message in messages %}
+    <li class="flash_validation">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} {% endwith %}
 <body>
     <form method="POST">
         <table>
@@ -13,12 +19,14 @@
             </tr>
             <tr>
                 <td><label for="price">Price</label></td>
-                <td><input type="text" name="price"/></td>
+                <td><input type="text" name="price" /></td>
             </tr>
             <tr>
-                <td></td><td><input type="submit" value="Add"/></td>
+                <td></td>
+                <td><input type="submit" value="Add" /></td>
             </tr>
         </table>
     </form>
 </body>
+
 </html>

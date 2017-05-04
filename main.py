@@ -34,14 +34,18 @@ def validation(name, description, price):
     if description == "":
         flash('Description is empty')
         return False
-    price = int(price)
     if price == "":
-        flash('Price is empty')
+        flash('Price is empty')        
         return False
-    price = int(price)
-    if price < 0:
-        flash('Price is less then 0')
+    if not price.isdigit():
+        flash('Invalid price')
         return False
+    if price.isdigit():
+        price = int(price)
+        if price < 0:
+            flash('Invalid price')
+            return False
+    
     return True
 
 
