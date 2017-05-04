@@ -19,3 +19,8 @@ class Product:
             product = Product(row[0], row[1], row[2], row[3])
             product_list.append(product)
         return product_list
+
+    def add_product(self):
+        query = "INSERT INTO products (name, description, price) VALUES(?, ?, ?);"
+        params = [self.name, self.description, self.price]
+        SQL.execute_query(query, params)

@@ -17,7 +17,12 @@ def add_product():
     if request.method == "GET":
         return render_template("add.html")
     if request.method == "POST":
-        return redirect(url_for("inex"))
+        name = request.form["name"]
+        description = request.form["describtion"]
+        price = request.form["price"]
+        product = Product("", name, description, price)
+        product.add_product()
+        return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
