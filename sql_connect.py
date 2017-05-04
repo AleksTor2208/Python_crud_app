@@ -14,9 +14,9 @@ class SQL:
         conn = SQL.sql_connection()
         cur = conn.cursor()
         cur.execute(query, params)
-        conn.commit()
-        conn.close()
         result = cur.fetchall()
+        conn.commit()
+        conn.close()        
         if result:
             return result
 
