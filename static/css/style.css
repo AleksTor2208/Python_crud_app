@@ -7,15 +7,37 @@
 table {
     margin-right: auto;
     margin-left: auto;
+    width: 50%;
 }
 
-
-table tr:nth-child(2){
-    background: grey;
+.index_table, th, td {
+    border: 1px solid black;
 }
 
-table, td {
-   border: 1px solid black;
+th {
+    height: 40px;
+}
+
+td {
+    padding-left: 5px;
+}
+
+.main_row {
+    background: dimgrey;
+}
+
+.descr_input{
+    height: 10em;
+}
+
+.describtion_label {
+    position: relative;
+    bottom: 4em;
+}
+
+.trash {
+    position:relative;
+    text-align: center;
 }
 
 .flash_validation {

@@ -7,12 +7,13 @@
     </form>
     </center>
     {% if products %}
-    <table>
-        <tr>
+    <table class="index_table">
+        <tr class="main_row">
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Delete</th>
         </tr>
         {% for product in products %}
         <tr>
@@ -20,7 +21,7 @@
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
-            <td><a href="remove/{{ product.id }}"> Delete
+            <td class="trash"><a href="remove/{{ product.id }}"> 
             <img class="image" src="{{ url_for('static', filename='pictures/trash.png') }}">
             </a>
             </td>
